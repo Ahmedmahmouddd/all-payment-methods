@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
           child: const Text("Make Payment", style: TextStyle(color: Colors.white)),
-          onPressed: () => PaymentManager.makePayment(10, "USD"),
+          onPressed: () => PaymentManager.payWithStripe(10, "USD"),
         ),
       ),
     );

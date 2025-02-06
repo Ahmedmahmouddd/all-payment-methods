@@ -5,7 +5,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:stripe_payment_app/stripe_payment/stripe_keys.dart';
 
 abstract class PaymentManager {
-  static Future<void> makePayment(int amount, String currency) async {
+  static Future<void> payWithStripe(int amount, String currency) async {
     try {
       String clientSecret = await _getClientSecret((amount * 100).toString(), currency);
       await _initializePaymentSheet(clientSecret);
@@ -26,7 +26,7 @@ abstract class PaymentManager {
       "https://api.stripe.com/v1/payment_intents",
       options: Options(
         headers: {
-          'Authorization': "Bearer ${ApiKeys.secretKey}",
+          'Authorization': "Bearer ${StripeApiKeys.secretKey}",
           'Content-Type': 'application/x-www-form-urlencoded'
         },
       ),

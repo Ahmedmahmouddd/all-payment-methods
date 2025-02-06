@@ -4,7 +4,7 @@ import 'package:stripe_payment_app/home/home_screen.dart';
 import 'package:stripe_payment_app/stripe_payment/stripe_keys.dart';
 
 void main() {
-  Stripe.publishableKey = ApiKeys.publishableKey;
+  Stripe.publishableKey = StripeApiKeys.publishableKey;
   runApp(const MyApp());
 }
 
